@@ -1,11 +1,9 @@
 <p align="center">
-  <img src="./public/logo-transparent.png" width="180" alt="Talli Logo" />
+  <img src="./public/assets/readme-header.svg" width="100%" alt="Talli Ambient Classroom Intelligence Header" />
 </p>
 
-<h1 align="center">⚡ Talli | Ambient Classroom Intelligence</h1>
-
 <p align="center">
-  <b>Passive Greek speech recognition & automated student participation tracking for Cyprus Primary Education 🇨🇾</b>
+  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Space+Mono&weight=700&size=16&duration=3000&pause=1000&color=000000&center=true&vCenter=true&width=650&height=35&lines=Continuous+Greek+Speech+Recognition+(el-GR);Automated+Cyprus+Primary+Classroom+Analytics;Greek+Vocative+Declension+Parser;Sub-Second+Multi-Student+Praise+Parsing" alt="Typing SVG" /></a>
 </p>
 
 <p align="center">
@@ -19,152 +17,152 @@
 
 ---
 
-## 🌟 Overview
+## Executive Summary
 
-**Talli** is an ambient classroom copilot designed specifically for primary school teachers in Cyprus (**Δημοτικό Α'1 - ΣΤ'6**). 
+**Talli** is an ambient classroom copilot designed specifically for primary school teachers in Cyprus (Grades A'1 through F'6). 
 
-Instead of forcing teachers to tap buttons or carry a tablet while teaching, Talli **passively listens to natural classroom speech**, detects praise and discipline cues in spoken Greek (*"Μπράβο Ελένη!"*, *"Σταμάτα Νίκο!"*), parses direct vocative names, and updates student participation scores in real time with **sub-second latency**.
+Traditional classroom point tracking requires manual tablet input, disrupting teaching flow. Talli replaces manual logging by **passively listening to spoken Greek dialogue**, recognizing praise and discipline cues in natural speech, resolving direct Greek vocative names, and updating student participation scores in real time.
 
 ---
 
-## 🎨 Neobrutalist Brand System
+## Live STT & Multi-Student Parsing Demonstration
 
-Talli is crafted using a high-contrast, tactile **Neobrutalist Design System** engineered for clarity under bright classroom lighting:
+<p align="center">
+  <img src="./public/assets/readme-stt-demo.svg" width="100%" alt="Real-time STT Console Terminal Demo" />
+</p>
 
-| Color Token | Hex | Application |
+---
+
+## System Architecture & Processing Pipeline
+
+<p align="center">
+  <img src="./public/assets/readme-pipeline.svg" width="100%" alt="Talli End-to-End Processing Pipeline" />
+</p>
+
+### Pipeline Stages
+
+1. **Voice Activity Slicing:** Continuous audio captured via mic is sliced into 4.8-second PCM buffers using `@ricky0123/vad-web` (Silero VAD in WebAssembly).
+2. **Speech-to-Text Stream:** Audio buffers pass directly to the Deepgram Nova-2 API tuned for `el-GR` Modern Greek speech.
+3. **Vocative Declension Parsing:** Raw transcripts are evaluated via OpenRouter LLM schema constraints and deterministic Greek regex parsers.
+4. **Instant Score Dispatch:** Cues matching confidence thresholds immediately trigger score increments and confetti animations.
+5. **Pending Review Queue:** Low-confidence cues (below 85% confidence) are saved to an interactive review queue presented at session completion.
+
+---
+
+## Core Capabilities
+
+### Ambient Speech Recognition (`el-GR`)
+Zero-latency continuous VAD audio slicing ensures non-blocking speech recognition during active classroom instruction.
+
+### Greek Vocative Declension Engine
+Greek classroom speech uses direct address vocatives rather than nominative roster names (e.g., nominative *Γιάννης* → vocative *Γιάννη*, *Ανδρέας* → *Ανδρέα*, *Νίκος* → *Νίκο*). Talli automatically maps spoken vocatives back to official roster entries.
+
+### Single-Pass Multi-Student Passing
+Teachers frequently praise multiple students in a single utterance (e.g., *"Μπράβο Ελένη, πολύ ωραία Γιάννη!"*). Talli evaluates compound statements in a single pass, updating multiple student scores simultaneously.
+
+### End-of-Session Pending Review
+Low-confidence speech cues are safely stored during the lesson. When the teacher clicks "End Session", an interactive modal allows bulk or individual review before report finalization.
+
+### Native Cyprus Primary System (Grades A'1 - F'6)
+Built-in schema support for all 36 Cyprus primary class sections, with LocalStorage state hydration and CSV/JSON report exports.
+
+---
+
+## Neobrutalist Design Tokens
+
+<p align="center">
+  <img src="./public/assets/readme-palette.svg" width="100%" alt="Neobrutalist Design System Palette" />
+</p>
+
+| Token Name | Hex Code | System Application |
 | :--- | :---: | :--- |
-| 💖 **Hot Pink** | `#FF66A3` | Primary Action Launchpad & Negative Discipline Badges |
-| 🩵 **Electric Blue** | `#1AC2FF` | Active Class Config & Student Roster Cards |
-| 💚 **Emerald Green** | `#4ADE80` | Live Praise Events, Confetti & End Session CTA |
-| 💛 **Sunburst Yellow** | `#FACC15` | Report Summaries & Session History Cards |
-| 💜 **Vibrant Purple** | `#C084FC` | Dynamic Voice Cue Reference & Grammar Tools |
-| 🖤 **Pitch Black** | `#000000` | 3px Hard Borders & Drop Shadows (`4px`, `8px`, `12px`) |
+| Hot Pink | `#FF66A3` | Primary Action Launchpad & Discipline Highlights |
+| Electric Blue | `#1AC2FF` | Active Class Configuration & Student Roster Cards |
+| Emerald Green | `#4ADE80` | Live Praise Events, Confetti & End Session CTA |
+| Sunburst Yellow | `#FACC15` | Report Summaries & Session History Cards |
+| Vibrant Purple | `#C084FC` | Dynamic Voice Cue Reference & Cheat Sheet |
+| Pitch Black | `#000000` | Hard 3px Outer Borders & Offset Shadows (`4px`, `8px`, `12px`) |
 
 ---
 
-## 🚀 Key Features
+## Spoken Greek Voice Cue Specifications
 
-### 🎙️ Ambient Greek Speech Recognition (`el-GR`)
-- Uses **Deepgram Nova-2** model tuned for Modern Greek pronunciation.
-- Powered by **Silero Voice Activity Detection (VAD)** in WebAssembly, automatically slicing speech into continuous 4.8s buffers to guarantee instant response.
-
-### 🧠 Greek Vocative Declension Engine
-- Greek classroom speech uses vocative case (e.g., nominative *Γιάννης* → vocative *Γιάννη*, *Ανδρέας* → *Ανδρέα*, *Νίκος* → *Νίκο*).
-- Talli's intelligence layer automatically resolves vocatives back to official student records in your roster.
-
-### ⚡ Multi-Student Multi-Point Passing
-- Teachers often give fast consecutive praise (e.g., *"Μπράβο Ελένη, πολύ ωραία Γιάννη!"*).
-- Talli parses multi-student statements in a single pass, awarding positive points to all mentioned students simultaneously.
-
-### 🛡️ End-of-Session Pending Review Workflow
-- Any speech cues with confidence below auto-approve thresholds (e.g., < 85%) are safely held in a `pending` queue.
-- At lesson completion, teachers can review, bulk-approve, or discard unsure points before generating official session reports.
-
-### 🇨🇾 Built for Cyprus Primary Education
-- Pre-configured for all **36 Cyprus Primary Class Sections** (**Δημοτικό Α'1 - ΣΤ'6**).
-- Full LocalStorage state persistence, student score tracking, and CSV/JSON report exports.
-
----
-
-## 🏗️ System Architecture
-
-```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#ff66a3', 'edgeLabelBackground':'#ffffff', 'tertiaryColor': '#4ade80'}}}%%
-flowchart TD
-    subgraph Audio Processing
-        A[🎙️ Teacher Speech Input] --> B[Silero VAD Audio Slicer 4.8s]
-        B -->|PCM Buffer| C[Deepgram Nova-2 STT el-GR]
-    end
-
-    subgraph Intelligence & Parsing
-        C -->|Raw Transcript| D[OpenRouter LLM & Greek Vocative Engine]
-        D --> E{Confidence Threshold}
-    end
-
-    subgraph Classroom State
-        E -->|Confidence >= 85%| F[⚡ Instant Score Event + Confetti]
-        E -->|Confidence < 85%| G[📥 Session Pending Review Queue]
-        F --> H[Update Roster & LocalStorage]
-        G --> I[End Lesson Interactive Review Modal]
-        I -->|Approved| H
-    end
-```
-
----
-
-## 🗣️ Greek Voice Cues Cheat Sheet
-
-| Spoken Cue Example | Targeted Student | Result | Score Delta |
+| Spoken Cue Pattern | Target Roster Student | Classification | Point Delta |
 | :--- | :--- | :---: | :---: |
-| *"Μπράβο Ελένη, εξαιρετική απάντηση!"* | Ελένη Μ. | 💚 Praise | `+1 Point` |
-| *"Πολύ ωραία Γιάννη!"* | Γιάννης Π. | 💚 Praise | `+1 Point` |
-| *"Σταμάτα Νίκο, πρόσεχε στο μάθημα!"* | Νίκος Λ. | 💖 Discipline | `-1 Point` |
-| *"Έλα ρε Ανδρέα, ησυχία!"* | Ανδρέας Κ. | 💖 Discipline | `-1 Point` |
-| *"Μπράβο Μαρία, πολύ ωραία Κώστα!"* | Μαρία Κ. & Κώστας Σ. | 💚 Multi-Praise | `+1 Point Each` |
+| *"Μπράβο Ελένη, εξαιρετική απάντηση!"* | Eleni M. | Praise | `+1 PTS` |
+| *"Πολύ ωραία Γιάννη!"* | Yiannis P. | Praise | `+1 PTS` |
+| *"Σταμάτα Νίκο, πρόσεχε στο μάθημα!"* | Nikos L. | Discipline | `-1 PTS` |
+| *"Έλα ρε Ανδρέα, ησυχία!"* | Andreas K. | Discipline | `-1 PTS` |
+| *"Μπράβο Μαρία, πολύ ωραία Κώστα!"* | Maria K. &amp; Kostas S. | Multi-Praise | `+1 PTS Each` |
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
-- **Frontend:** [Next.js 14](https://nextjs.org/) (App Router), TypeScript, React 18
-- **Styling & UI:** TailwindCSS, Custom Neobrutalist Shadow Tokens, Lucide Icons
-- **Animations:** Framer Motion, Canvas Confetti
-- **Voice Activity Detection:** `@ricky0123/vad-web` (Silero VAD via ONNX WebAssembly)
-- **Speech-to-Text:** [Deepgram API](https://deepgram.com/) (`nova-2` el-GR)
-- **NLP & Parsing:** OpenRouter API (`google/gemini-2.5-flash` with JSON Schema constraint)
+| Component | Technology / Library |
+| :--- | :--- |
+| Framework | Next.js 14 (App Router) |
+| Language | TypeScript 5 |
+| Styling | TailwindCSS + Neobrutalist Utility System |
+| UI Motion | Framer Motion + Canvas Confetti |
+| Audio VAD | `@ricky0123/vad-web` (Silero VAD ONNX WASM) |
+| Speech STT | Deepgram API (`nova-2` el-GR) |
+| NLP Parsing | OpenRouter API (`google/gemini-2.5-flash` JSON Schema) |
 
 ---
 
-## ⚡ Quickstart & Setup
+## Getting Started
 
-### Prerequisites
-- **Node.js:** `v18.x` or higher
-- **Package Manager:** `npm` or `yarn`
+### Requirements
+- Node.js `v18.x` or higher
+- npm or yarn
 
-### 1. Clone & Install
+### 1. Installation
 ```bash
 git clone https://github.com/Qu4rk/Talli.git
 cd Talli
 npm install
 ```
 
-### 2. Configure Environment Variables
+### 2. Environment Variables
 Create a `.env.local` file in the root directory:
 ```env
 DEEPGRAM_API_KEY=your_deepgram_api_key
 OPENROUTER_API_KEY=your_openrouter_api_key
 ```
 
-### 3. Run Development Server
+### 3. Execution
 ```bash
 npm run dev
 ```
-Open **`http://localhost:3000`** in your browser.
+Navigate to `http://localhost:3000` in Google Chrome or Microsoft Edge.
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 Talli/
-├── public/                     # Logo assets & ONNX WASM VAD binaries
+├── public/
+│   ├── assets/                 # Animated SVG assets & branding
+│   └── silero_vad.onnx         # ONNX WASM VAD model binaries
 ├── src/
 │   ├── app/
-│   │   ├── api/listen/         # Deepgram STT & OpenRouter detection route
-│   │   ├── classroom/          # Live classroom tracking & End-Session review
-│   │   ├── reports/            # Analytics & session history exports
-│   │   ├── settings/           # Audio sensitivity & API configuration
+│   │   ├── api/listen/         # Deepgram STT & OpenRouter endpoint
+│   │   ├── classroom/          # Live classroom tracking & pending review
+│   │   ├── reports/            # Analytics & session report history
+│   │   ├── settings/           # Audio sensitivity & API key config
 │   │   ├── students/           # Class roster management
 │   │   └── page.tsx            # Main Neobrutalist dashboard hub
-│   ├── components/             # Reusable UI (Header, SessionSetupModal)
-│   ├── context/                # AppContext & Cyprus Primary class schemas
-│   ├── hooks/                  # useClassroomListener VAD audio processing
+│   ├── components/             # Header & SessionSetupModal
+│   ├── context/                # AppContext & Cyprus class schema
+│   ├── hooks/                  # useClassroomListener VAD audio processor
 │   └── lib/                    # Confetti effects & Greek text utilities
 └── README.md
 ```
 
 ---
 
-<p align="center">
-  Designed with ❤️ for Cyprus Primary Educators 🇨🇾
-</p>
+## License
+
+This software is released under the **MIT License**.
