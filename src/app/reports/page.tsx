@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, Download, FileText, X, Trophy, Sparkles, AlertCircle, HeartHandshake, Plus, PartyPopper, Award, Medal } from "lucide-react";
 import Header from "@/components/Header";
-import { useApp, SessionReport } from "@/context/AppContext";
+import { useApp, SessionReport, CYPRUS_CLASSES } from "@/context/AppContext";
 import {
   triggerGrandCelebration,
   triggerGoldConfetti,
@@ -63,26 +63,41 @@ export default function ReportsScreen() {
             <p className="text-slate-800 font-extrabold text-base">Celebrate top scoring achievers and identify students who need encouragement.</p>
           </div>
 
-          {/* Class Roster Selector & Range Filter */}
+          {/* Dynamic Class Roster Selector & Range Filter */}
           <div className="flex flex-wrap items-center gap-3">
-            <div className="bg-white border-[3px] border-black p-1 shadow-[4px_4px_0_0_#000000] flex items-center gap-1 flex-wrap">
-              {[
-                { id: "d1", label: "Τάξη Δ'1" },
-                { id: "b3", label: "Τάξη Β'3" },
-                { id: "a2", label: "Τάξη Α'2" },
-                { id: "e1", label: "Τάξη Ε'1" },
-                { id: "st4", label: "Τάξη ΣΤ'4" },
-              ].map((c) => (
-                <button
-                  key={c.id}
-                  onClick={() => setActiveClass(c.id)}
-                  className={`px-3 py-1.5 text-xs font-black transition-all cursor-pointer ${
-                    activeClass === c.id ? "bg-[#1ac2ff] text-black border-2 border-black shadow-[2px_2px_0_0_#000]" : "text-black hover:bg-slate-100"
-                  }`}
-                >
-                  {c.label}
-                </button>
-              ))}
+            <div className="bg-white border-[3px] border-black p-1.5 shadow-[4px_4px_0_0_#000000] flex items-center gap-1.5 flex-wrap">
+              {(() => {
+                const withStudents = CYPRUS_CLASSES.filter((c) => {
+                  const count = students.filter((s) => s.classId === c.id).length;
+                  return count > 0 && c.id !== activeClass;
+                });
+                const currentObj = CYPRUS_CLASSES.find((c) => c.id === activeClass) || CYPRUS_CLASSES[0];
+                const pills = [currentObj, ...withStudents.slice(0, 3)];
+
+                return pills.map((c) => (
+                  <button
+                    key={c.id}
+                    onClick={() => setActiveClass(c.id)}
+                    className={`px-3 py-1.5 text-xs font-black transition-all cursor-pointer ${
+                      activeClass === c.id ? "bg-[#1ac2ff] text-black border-2 border-black shadow-[2px_2px_0_0_#000]" : "text-black hover:bg-slate-100"
+                    }`}
+                  >
+                    {c.label}
+                  </button>
+                ));
+              })()}
+
+              <select
+                value={activeClass}
+                onChange={(e) => setActiveClass(e.target.value)}
+                className="bg-[#facc15] text-black font-black text-xs px-2 py-1 border-2 border-black shadow-[1px_1px_0_0_#000] outline-none cursor-pointer"
+              >
+                {CYPRUS_CLASSES.map((c) => (
+                  <option key={c.id} value={c.id}>
+                    {c.label}
+                  </option>
+                ))}
+              </select>
             </div>
 
             <div className="bg-white border-[3px] border-black p-1 shadow-[4px_4px_0_0_#000000] flex items-center gap-1">

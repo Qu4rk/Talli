@@ -127,35 +127,45 @@ export default function HubScreen() {
           </div>
         </div>
 
-        {/* Compact Non-Overflowing Cyprus Class Selector Bar */}
-        <div className="flex flex-wrap items-center gap-2 bg-white p-3 border-[2.5px] border-black shadow-[4px_4px_0_0_#000]">
-          <span className="text-xs font-black uppercase tracking-wider text-black/80 flex items-center gap-1.5 shrink-0">
-            <BookOpen size={14} /> Switch Active Class:
-          </span>
+        {/* Compact Cyprus Class Selector Bar (Capped at 4 Pills Max to Prevent Clutter) */}
+        <div className="flex flex-wrap items-center justify-between gap-3 bg-white p-3 border-[2.5px] border-black shadow-[4px_4px_0_0_#000]">
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="text-xs font-black uppercase tracking-wider text-black/80 flex items-center gap-1.5 shrink-0">
+              <BookOpen size={14} /> Active Class:
+            </span>
 
-          {/* Quick Pills for Active Classes */}
-          {CYPRUS_CLASSES.filter((c) => {
-            const count = students.filter((s) => s.classId === c.id).length;
-            return count > 0 || c.id === activeClass;
-          }).map((c) => {
-            const isActive = activeClass === c.id;
-            const count = students.filter((s) => s.classId === c.id).length;
-            return (
-              <button
-                key={c.id}
-                onClick={() => setActiveClass(c.id)}
-                className={`px-3 py-1 text-xs font-black border-2 border-black shadow-[2px_2px_0_0_#000] transition-all cursor-pointer ${
-                  isActive ? "bg-[#ff66a3] text-black font-extrabold" : "bg-slate-100 text-black hover:bg-slate-200"
-                }`}
-              >
-                {c.label} ({count})
-              </button>
-            );
-          })}
+            {/* Quick Pills for Active Class + Top 3 Featured Classes */}
+            {(() => {
+              const withStudents = CYPRUS_CLASSES.filter((c) => {
+                const count = students.filter((s) => s.classId === c.id).length;
+                return count > 0 && c.id !== activeClass;
+              });
+              const currentObj = CYPRUS_CLASSES.find((c) => c.id === activeClass) || CYPRUS_CLASSES[0];
+              const pills = [currentObj, ...withStudents.slice(0, 3)];
+
+              return pills.map((c) => {
+                const isActive = activeClass === c.id;
+                const count = students.filter((s) => s.classId === c.id).length;
+                return (
+                  <button
+                    key={c.id}
+                    onClick={() => setActiveClass(c.id)}
+                    className={`px-3 py-1 text-xs font-black border-2 border-black transition-all cursor-pointer ${
+                      isActive
+                        ? "bg-[#ff66a3] text-black font-extrabold shadow-[2px_2px_0_0_#000]"
+                        : "bg-slate-100 text-black hover:bg-slate-200"
+                    }`}
+                  >
+                    {c.label} ({count})
+                  </button>
+                );
+              });
+            })()}
+          </div>
 
           {/* Dropdown for All 36 Cyprus Classes */}
           <div className="flex items-center gap-1.5 ml-auto">
-            <span className="text-[11px] font-bold text-black/60 uppercase">All Grades:</span>
+            <span className="text-[11px] font-bold text-black/60 uppercase">All 36 Classes:</span>
             <select
               value={activeClass}
               onChange={(e) => setActiveClass(e.target.value)}
