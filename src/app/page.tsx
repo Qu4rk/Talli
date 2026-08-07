@@ -344,9 +344,6 @@ export default function HubScreen() {
                   <Activity size={18} />
                   Recent Session History
                 </span>
-                <Link href="/reports" className="text-xs font-black text-black hover:underline flex items-center gap-1">
-                  Reports ({reports.length}) <ArrowRight size={12} />
-                </Link>
               </div>
 
               {recentReports.length === 0 ? (
