@@ -1,0 +1,190 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" width="100%" height="380">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800;900&amp;family=Space+Mono:wght@700&amp;display=swap');
+      
+      .col-header { font-family: 'Space Mono', 'SF Mono', monospace; font-size: 11px; font-weight: 700; fill: #000000; letter-spacing: 0.5px; }
+      .box-title { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 13px; font-weight: 900; fill: #000000; }
+      .box-sub { font-family: 'Space Mono', 'SF Mono', monospace; font-size: 10px; font-weight: 700; fill: #000000; opacity: 0.85; }
+      .arrow-text { font-family: 'Space Mono', 'SF Mono', monospace; font-size: 9px; font-weight: 700; fill: #000000; text-anchor: middle; }
+
+      @keyframes slideArrow {
+        0%, 100% { transform: translateX(0px); }
+        50% { transform: translateX(5px); }
+      }
+      .animated-connector { animation: slideArrow 1.6s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Shadow Layer -->
+  <rect x="16" y="16" width="968" height="348" fill="#000000" />
+  
+  <!-- Outer Window Frame -->
+  <rect x="4" y="4" width="968" height="348" fill="#ffffff" stroke="#000000" stroke-width="4" />
+  
+  <!-- Top Title Bar -->
+  <rect x="4" y="4" width="968" height="42" fill="#c084fc" stroke="#000000" stroke-width="4" />
+  <text x="20" y="27" font-family="'Space Mono', 'SF Mono', monospace" font-size="13" font-weight="700" fill="#000000">ENGINE // GREEK VOCATIVE DECLENSION &amp; MULTI-STUDENT PARSER</text>
+
+  <g transform="translate(25, 65)">
+    
+    <!-- Column Headers Row -->
+    <g transform="translate(0, 0)">
+      <!-- Col 1 Header -->
+      <rect x="0" y="0" width="180" height="24" fill="#1ac2ff" stroke="#000000" stroke-width="2" />
+      <text x="90" y="16" class="col-header" text-anchor="middle">1. ROSTER RECORD</text>
+
+      <!-- Col 2 Header -->
+      <rect x="280" y="0" width="180" height="24" fill="#facc15" stroke="#000000" stroke-width="2" />
+      <text x="370" y="16" class="col-header" text-anchor="middle">2. SPOKEN VOCATIVE</text>
+
+      <!-- Col 3 Header -->
+      <rect x="560" y="0" width="385" height="24" fill="#4ade80" stroke="#000000" stroke-width="2" />
+      <text x="752" y="16" class="col-header" text-anchor="middle">3. AUTOMATED POINT DISPATCH</text>
+    </g>
+
+    <!-- Content Rows Area -->
+    <g transform="translate(0, 38)">
+      
+      <!-- ROW 1: Yiannis -->
+      <g transform="translate(0, 0)">
+        <!-- Col 1 Box (x: 0 to 180) -->
+        <g transform="translate(0, 0)">
+          <rect x="4" y="4" width="180" height="64" fill="#000000" />
+          <rect x="0" y="0" width="180" height="64" fill="#ffffff" stroke="#000000" stroke-width="3" />
+          <text x="12" y="26" class="box-title">Γιάννης</text>
+          <text x="12" y="46" class="box-sub">(Nominative Case)</text>
+        </g>
+
+        <!-- Connector 1 (x: 180 to 280) -->
+        <g transform="translate(180, 0)">
+          <!-- Line -->
+          <line x1="10" y1="32" x2="80" y2="32" stroke="#000000" stroke-width="3.5" stroke-dasharray="4 3" />
+          <!-- Animated Arrow Head -->
+          <g transform="translate(35, 12)" class="animated-connector">
+            <rect x="0" y="0" width="36" height="40" fill="#ffffff" stroke="#000000" stroke-width="2" />
+            <path d="M 10 20 L 26 20 M 18 12 L 26 20 L 18 28" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </g>
+
+        <!-- Col 2 Box (x: 280 to 460) -->
+        <g transform="translate(280, 0)">
+          <rect x="4" y="4" width="180" height="64" fill="#000000" />
+          <rect x="0" y="0" width="180" height="64" fill="#ffffff" stroke="#000000" stroke-width="3" />
+          <text x="12" y="26" class="box-title">"Γιάννη!"</text>
+          <text x="12" y="46" class="box-sub">(Vocative Dialogue)</text>
+        </g>
+
+        <!-- Connector 2 (x: 460 to 560) -->
+        <g transform="translate(460, 0)">
+          <!-- Line -->
+          <line x1="10" y1="32" x2="80" y2="32" stroke="#000000" stroke-width="3.5" stroke-dasharray="4 3" />
+          <!-- Animated Arrow Head -->
+          <g transform="translate(35, 12)" class="animated-connector">
+            <rect x="0" y="0" width="36" height="40" fill="#ffffff" stroke="#000000" stroke-width="2" />
+            <path d="M 10 20 L 26 20 M 18 12 L 26 20 L 18 28" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </g>
+
+        <!-- Col 3 Box (x: 560 to 945) -->
+        <g transform="translate(560, 0)">
+          <rect x="4" y="4" width="385" height="64" fill="#000000" />
+          <rect x="0" y="0" width="385" height="64" fill="#4ade80" stroke="#000000" stroke-width="3" />
+          <text x="14" y="26" class="box-title">RESOLVED: Yiannis P. (ID #2)</text>
+          <text x="14" y="46" class="box-sub">Praise Trigger: "Πολύ ωραία" -&gt; +1 PTS</text>
+        </g>
+      </g>
+
+      <!-- ROW 2: Andreas -->
+      <g transform="translate(0, 84)">
+        <!-- Col 1 Box -->
+        <g transform="translate(0, 0)">
+          <rect x="4" y="4" width="180" height="64" fill="#000000" />
+          <rect x="0" y="0" width="180" height="64" fill="#ffffff" stroke="#000000" stroke-width="3" />
+          <text x="12" y="26" class="box-title">Ανδρέας</text>
+          <text x="12" y="46" class="box-sub">(Nominative Case)</text>
+        </g>
+
+        <!-- Connector 1 -->
+        <g transform="translate(180, 0)">
+          <line x1="10" y1="32" x2="80" y2="32" stroke="#000000" stroke-width="3.5" stroke-dasharray="4 3" />
+          <g transform="translate(35, 12)" class="animated-connector">
+            <rect x="0" y="0" width="36" height="40" fill="#ffffff" stroke="#000000" stroke-width="2" />
+            <path d="M 10 20 L 26 20 M 18 12 L 26 20 L 18 28" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </g>
+
+        <!-- Col 2 Box -->
+        <g transform="translate(280, 0)">
+          <rect x="4" y="4" width="180" height="64" fill="#000000" />
+          <rect x="0" y="0" width="180" height="64" fill="#ffffff" stroke="#000000" stroke-width="3" />
+          <text x="12" y="26" class="box-title">"Ανδρέα!"</text>
+          <text x="12" y="46" class="box-sub">(Vocative Dialogue)</text>
+        </g>
+
+        <!-- Connector 2 -->
+        <g transform="translate(460, 0)">
+          <line x1="10" y1="32" x2="80" y2="32" stroke="#000000" stroke-width="3.5" stroke-dasharray="4 3" />
+          <g transform="translate(35, 12)" class="animated-connector">
+            <rect x="0" y="0" width="36" height="40" fill="#ffffff" stroke="#000000" stroke-width="2" />
+            <path d="M 10 20 L 26 20 M 18 12 L 26 20 L 18 28" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </g>
+
+        <!-- Col 3 Box -->
+        <g transform="translate(560, 0)">
+          <rect x="4" y="4" width="385" height="64" fill="#000000" />
+          <rect x="0" y="0" width="385" height="64" fill="#4ade80" stroke="#000000" stroke-width="3" />
+          <text x="14" y="26" class="box-title">RESOLVED: Andreas T. (ID #4)</text>
+          <text x="14" y="46" class="box-sub">Praise Trigger: "Μπράβο" -&gt; +1 PTS</text>
+        </g>
+      </g>
+
+      <!-- ROW 3: Nikos -->
+      <g transform="translate(0, 168)">
+        <!-- Col 1 Box -->
+        <g transform="translate(0, 0)">
+          <rect x="4" y="4" width="180" height="64" fill="#000000" />
+          <rect x="0" y="0" width="180" height="64" fill="#ffffff" stroke="#000000" stroke-width="3" />
+          <text x="12" y="26" class="box-title">Νίκος</text>
+          <text x="12" y="46" class="box-sub">(Nominative Case)</text>
+        </g>
+
+        <!-- Connector 1 -->
+        <g transform="translate(180, 0)">
+          <line x1="10" y1="32" x2="80" y2="32" stroke="#000000" stroke-width="3.5" stroke-dasharray="4 3" />
+          <g transform="translate(35, 12)" class="animated-connector">
+            <rect x="0" y="0" width="36" height="40" fill="#ffffff" stroke="#000000" stroke-width="2" />
+            <path d="M 10 20 L 26 20 M 18 12 L 26 20 L 18 28" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </g>
+
+        <!-- Col 2 Box -->
+        <g transform="translate(280, 0)">
+          <rect x="4" y="4" width="180" height="64" fill="#000000" />
+          <rect x="0" y="0" width="180" height="64" fill="#ffffff" stroke="#000000" stroke-width="3" />
+          <text x="12" y="26" class="box-title">"Νίκο!"</text>
+          <text x="12" y="46" class="box-sub">(Vocative Dialogue)</text>
+        </g>
+
+        <!-- Connector 2 -->
+        <g transform="translate(460, 0)">
+          <line x1="10" y1="32" x2="80" y2="32" stroke="#000000" stroke-width="3.5" stroke-dasharray="4 3" />
+          <g transform="translate(35, 12)" class="animated-connector">
+            <rect x="0" y="0" width="36" height="40" fill="#ffffff" stroke="#000000" stroke-width="2" />
+            <path d="M 10 20 L 26 20 M 18 12 L 26 20 L 18 28" fill="none" stroke="#000000" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </g>
+
+        <!-- Col 3 Box -->
+        <g transform="translate(560, 0)">
+          <rect x="4" y="4" width="385" height="64" fill="#000000" />
+          <rect x="0" y="0" width="385" height="64" fill="#ff66a3" stroke="#000000" stroke-width="3" />
+          <text x="14" y="26" class="box-title">RESOLVED: Nikos L. (ID #6)</text>
+          <text x="14" y="46" class="box-sub">Correction Trigger: "Σταμάτα" -&gt; -1 PTS</text>
+        </g>
+      </g>
+
+    </g>
+  </g>
+</svg>

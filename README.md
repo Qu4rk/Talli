@@ -45,7 +45,7 @@ In Modern Greek, teachers address students using the **vocative case** rather th
 Talli features an automated Greek declension parser that resolves spoken vocatives back to roster student records.
 
 <p align="center">
-  <img src="./public/assets/readme-vocative.svg" width="100%" alt="Greek Vocative Declension Engine Transformation Flow" />
+  <img src="./public/assets/readme-greek-vocative.svg?v=3" width="100%" alt="Greek Vocative Declension Engine Transformation Flow" />
 </p>
 
 ---
