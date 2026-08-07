@@ -9,11 +9,42 @@
       .box-name { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 15px; font-weight: 900; fill: #000000; }
       .box-detail { font-family: 'Space Mono', 'SF Mono', monospace; font-size: 11px; font-weight: 700; fill: #000000; opacity: 0.85; }
 
-      @keyframes pulseDot { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
-      .pulsing-status { animation: pulseDot 1.4s infinite ease-in-out; }
+      /* Live Audio Spectrum Equalizer Animations */
+      @keyframes eqBar1 { 0%, 100% { height: 12px; y: 14px; } 50% { height: 32px; y: 4px; } }
+      @keyframes eqBar2 { 0%, 100% { height: 36px; y: 2px; } 50% { height: 16px; y: 22px; } }
+      @keyframes eqBar3 { 0%, 100% { height: 18px; y: 16px; } 50% { height: 38px; y: 1px; } }
+      @keyframes eqBar4 { 0%, 100% { height: 32px; y: 4px; } 50% { height: 14px; y: 22px; } }
+      
+      .eq-1 { animation: eqBar1 1.0s ease-in-out infinite; }
+      .eq-2 { animation: eqBar2 0.8s ease-in-out infinite; }
+      .eq-3 { animation: eqBar3 1.2s ease-in-out infinite; }
+      .eq-4 { animation: eqBar4 0.9s ease-in-out infinite; }
 
-      @keyframes slideArrow { 0%, 100% { transform: translateX(0px); } 50% { transform: translateX(5px); } }
-      .moving-arrow { animation: slideArrow 1.5s ease-in-out infinite; }
+      /* Scanning Radar Laser Line Animation */
+      @keyframes scanSweep {
+        0% { transform: translateY(0px); opacity: 0.2; }
+        50% { transform: translateY(140px); opacity: 0.85; }
+        100% { transform: translateY(0px); opacity: 0.2; }
+      }
+      .scan-line { animation: scanSweep 3.5s ease-in-out infinite; }
+
+      /* Pulse Status Ring */
+      @keyframes pulseDot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.25; transform: scale(0.85); } }
+      .pulsing-status { animation: pulseDot 1.4s infinite ease-in-out; transform-origin: center; }
+
+      /* Sliding Pill Badges */
+      @keyframes slidePill {
+        0%, 100% { transform: translateX(0px); }
+        50% { transform: translateX(6px); }
+      }
+      .pill-animated { animation: slidePill 1.8s ease-in-out infinite; }
+
+      /* Pulse Score Tiles */
+      @keyframes pulseScore {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+      .score-badge { animation: pulseScore 2.2s ease-in-out infinite; transform-origin: center; }
     </style>
   </defs>
 
@@ -43,21 +74,25 @@
       <circle cx="18" cy="17" r="5" fill="#ef4444" class="pulsing-status" />
       <text x="32" y="22" font-family="'Space Mono', monospace" font-size="11" font-weight="700" fill="#38bdf8">1. SPOKEN AUDIO STREAM</text>
 
-      <!-- Waveform Animation -->
+      <!-- Animated Waveform Spectrum -->
       <g transform="translate(16, 48)">
-        <rect x="0" y="8" width="6" height="24" fill="#38bdf8" />
-        <rect x="10" y="2" width="6" height="36" fill="#38bdf8" />
-        <rect x="20" y="12" width="6" height="16" fill="#38bdf8" />
-        <rect x="30" y="0" width="6" height="40" fill="#38bdf8" />
-        <rect x="40" y="6" width="6" height="28" fill="#38bdf8" />
-        <rect x="50" y="16" width="6" height="8" fill="#38bdf8" />
-        <rect x="60" y="4" width="6" height="32" fill="#38bdf8" />
+        <rect x="0" y="10" width="6" height="20" fill="#38bdf8" class="eq-1" />
+        <rect x="10" y="2" width="6" height="36" fill="#38bdf8" class="eq-2" />
+        <rect x="20" y="12" width="6" height="16" fill="#38bdf8" class="eq-3" />
+        <rect x="30" y="0" width="6" height="40" fill="#38bdf8" class="eq-4" />
+        <rect x="40" y="6" width="6" height="28" fill="#38bdf8" class="eq-1" />
+        <rect x="50" y="16" width="6" height="8" fill="#38bdf8" class="eq-2" />
+        <rect x="60" y="4" width="6" height="32" fill="#38bdf8" class="eq-3" />
         <text x="80" y="24" font-family="'Space Mono', monospace" font-size="11" font-weight="700" fill="#94a3b8">el-GR // 16kHz VAD</text>
       </g>
 
       <!-- Spoken Dialogue Console Box -->
       <g transform="translate(16, 105)">
         <rect x="0" y="0" width="298" height="195" fill="#090d16" stroke="#334155" stroke-width="2" />
+        
+        <!-- Laser Scan Line Overlay -->
+        <rect x="0" y="10" width="298" height="3" fill="#38bdf8" class="scan-line" />
+
         <text x="12" y="26" font-family="'Space Mono', monospace" font-size="10" font-weight="700" fill="#64748b">// Teacher Spoken Phrase:</text>
         
         <text x="12" y="58" class="code-line" fill="#facc15">"Μπράβο Ελένη,</text>
@@ -86,8 +121,12 @@
         <rect x="0" y="0" width="328" height="76" fill="#1ac2ff" stroke="#000000" stroke-width="2.5" />
         <text x="14" y="26" class="box-name">"Ελένη" (Spoken Vocative)</text>
         <text x="14" y="46" class="box-detail">Declension: Unchanged (Fem. Nom=Voc)</text>
-        <rect x="14" y="52" width="130" height="18" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
-        <text x="20" y="65" font-family="'Space Mono', monospace" font-size="9" font-weight="700" fill="#000000">➔ Roster: Ελένη Μ.</text>
+        
+        <!-- Sliding Pill Badge -->
+        <g class="pill-animated">
+          <rect x="14" y="52" width="138" height="18" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+          <text x="20" y="65" font-family="'Space Mono', monospace" font-size="9" font-weight="700" fill="#000000">➔ Roster: Ελένη Μ.</text>
+        </g>
       </g>
 
       <!-- Row 2: Yiannis (Masculine -is -> -i) -->
@@ -96,8 +135,12 @@
         <rect x="0" y="0" width="328" height="76" fill="#facc15" stroke="#000000" stroke-width="2.5" />
         <text x="14" y="26" class="box-name">"Γιάννη" ➔ Γιάννης</text>
         <text x="14" y="46" class="box-detail">Rule: -ης (Nominative) ➔ -η (Vocative)</text>
-        <rect x="14" y="52" width="130" height="18" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
-        <text x="20" y="65" font-family="'Space Mono', monospace" font-size="9" font-weight="700" fill="#000000">➔ Roster: Γιάννης Π.</text>
+        
+        <!-- Sliding Pill Badge -->
+        <g class="pill-animated">
+          <rect x="14" y="52" width="138" height="18" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+          <text x="20" y="65" font-family="'Space Mono', monospace" font-size="9" font-weight="700" fill="#000000">➔ Roster: Γιάννης Π.</text>
+        </g>
       </g>
 
       <!-- Row 3: Nikos (Masculine -os -> -o) -->
@@ -106,8 +149,12 @@
         <rect x="0" y="0" width="328" height="76" fill="#ff66a3" stroke="#000000" stroke-width="2.5" />
         <text x="14" y="26" class="box-name">"Νίκο" ➔ Νίκος</text>
         <text x="14" y="46" class="box-detail">Rule: -ος (Nominative) ➔ -ο (Vocative)</text>
-        <rect x="14" y="52" width="130" height="18" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
-        <text x="20" y="65" font-family="'Space Mono', monospace" font-size="9" font-weight="700" fill="#000000">➔ Roster: Νίκος Λ.</text>
+        
+        <!-- Sliding Pill Badge -->
+        <g class="pill-animated">
+          <rect x="14" y="52" width="138" height="18" fill="#ffffff" stroke="#000000" stroke-width="1.5" />
+          <text x="20" y="65" font-family="'Space Mono', monospace" font-size="9" font-weight="700" fill="#000000">➔ Roster: Νίκος Λ.</text>
+        </g>
       </g>
 
     </g>
@@ -127,8 +174,12 @@
         <rect x="0" y="0" width="252" height="76" fill="#4ade80" stroke="#000000" stroke-width="2.5" />
         <text x="12" y="26" class="box-name">Eleni M. (ID #1)</text>
         <text x="12" y="46" class="box-detail">Praise: "Μπράβο"</text>
-        <rect x="170" y="14" width="70" height="46" fill="#ffffff" stroke="#000000" stroke-width="2" />
-        <text x="178" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="900" fill="#000000">+1 PTS</text>
+        
+        <!-- Score Tile Animation -->
+        <g class="score-badge">
+          <rect x="170" y="14" width="70" height="46" fill="#ffffff" stroke="#000000" stroke-width="2" />
+          <text x="178" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="900" fill="#000000">+1 PTS</text>
+        </g>
       </g>
 
       <!-- Action Card 2: Yiannis P. +1 PTS -->
@@ -137,8 +188,11 @@
         <rect x="0" y="0" width="252" height="76" fill="#4ade80" stroke="#000000" stroke-width="2.5" />
         <text x="12" y="26" class="box-name">Yiannis P. (ID #2)</text>
         <text x="12" y="46" class="box-detail">Praise: "Πολύ ωραία"</text>
-        <rect x="170" y="14" width="70" height="46" fill="#ffffff" stroke="#000000" stroke-width="2" />
-        <text x="178" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="900" fill="#000000">+1 PTS</text>
+        
+        <g class="score-badge">
+          <rect x="170" y="14" width="70" height="46" fill="#ffffff" stroke="#000000" stroke-width="2" />
+          <text x="178" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="900" fill="#000000">+1 PTS</text>
+        </g>
       </g>
 
       <!-- Action Card 3: Nikos L. -1 PTS -->
@@ -147,8 +201,11 @@
         <rect x="0" y="0" width="252" height="76" fill="#ff66a3" stroke="#000000" stroke-width="2.5" />
         <text x="12" y="26" class="box-name">Nikos L. (ID #6)</text>
         <text x="12" y="46" class="box-detail">Correction: "Σταμάτα"</text>
-        <rect x="170" y="14" width="70" height="46" fill="#ffffff" stroke="#000000" stroke-width="2" />
-        <text x="180" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="900" fill="#000000">-1 PTS</text>
+        
+        <g class="score-badge">
+          <rect x="170" y="14" width="70" height="46" fill="#ffffff" stroke="#000000" stroke-width="2" />
+          <text x="180" y="42" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="900" fill="#000000">-1 PTS</text>
+        </g>
       </g>
 
     </g>
