@@ -62,6 +62,7 @@ interface UseClassroomListenerOptions {
   micPermission: "prompt" | "granted" | "denied";
   roster: StudentRosterInfo[];
   autoApproveThreshold: number;
+  sensitivity?: number;
   openrouterModel?: string;
   onAutoApproved: (detection: DetectionItem) => void;
   onPendingDetection: (detection: DetectionItem) => void;
@@ -72,6 +73,7 @@ export function useClassroomListener({
   micPermission,
   roster,
   autoApproveThreshold,
+  sensitivity = 70,
   openrouterModel,
   onAutoApproved,
   onPendingDetection,
@@ -190,12 +192,14 @@ export function useClassroomListener({
     }
   }, [processDetectionItem]);
 
+  const positiveSpeechThreshold = Math.max(0.4, Math.min(0.85, 0.85 - (sensitivity / 100) * 0.4));
+
   const vad = useMicVAD({
     startOnLoad: false,
     model: "v5",
     baseAssetPath: "/",
     onnxWASMBasePath: "/",
-    positiveSpeechThreshold: 0.65,
+    positiveSpeechThreshold,
     negativeSpeechThreshold: 0.45,
     minSpeechMs: 320,
     redemptionMs: 400,
@@ -277,6 +281,7 @@ export function useClassroomListener({
         window.removeEventListener("error", handleError);
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isListening, micPermission, vad.loading, vad.errored, vad.listening]);
 
   // Web Speech API Dual-Engine Listener
@@ -355,6 +360,7 @@ export function useClassroomListener({
         }
       }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isListening, micPermission]);
 
   return {

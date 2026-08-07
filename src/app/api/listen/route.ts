@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+import { removeAccents } from "@/lib/greekUtils";
 
 // Allow up to 30 seconds for sequential STT + LLM processing
 export const maxDuration = 30;
@@ -238,42 +239,41 @@ function RuleBasedGreekParser(
   transcript: string,
   roster: StudentRosterItem[]
 ): DetectionResult[] {
-  const text = transcript.toLowerCase();
-  if (!text.trim()) return [];
+  const normalizedText = removeAccents(transcript);
+  if (!normalizedText.trim()) return [];
 
   const positiveTriggers = [
-    "μπράβο", "εύγε", "πολύ ωραία", "πολύ ωραίος", "σωστά", "σωστός", "σωστή",
-    "εξαιρετικά", "τέλεια", "πολύ καλά", "σωστό", "super", "άριστα", "καλή προσπάθεια"
+    "μπραβο", "ευγε", "πολυ ωραια", "πολυ ωραιος", "σωστα", "σωστος", "σωστη",
+    "εξαιρετικα", "τελεια", "πολυ καλα", "σωστο", "super", "αριστα", "καλη προσπαθεια"
   ];
   const negativeTriggers = [
-    "σταμάτα", "σταματα", "σταμάτησε", "σταματησε", "ησυχία", "ησυχια", "πρόσεχε", "προσεχε",
-    "προσοχή", "προσοχη", "μη μιλάς", "μη μιλας", "μην μιλάς", "μην μιλας",
-    "κάτσε κάτω", "κατσε κατω", "σιωπή", "σιωπη", "στοπ", "φτάνει", "φτανει", "αρκεί", "αρκει"
+    "σταματα", "σταματησε", "ησυχια", "προσεχε", "προσοχη",
+    "μη μιλας", "μην μιλας", "κατσε κατω", "σιωπη", "στοπ", "φτανει", "αρκει"
   ];
 
   const results: DetectionResult[] = [];
 
   for (const student of roster) {
-    const nameLower = student.name.toLowerCase();
-    const greekLower = (student.greekName || student.name).toLowerCase();
-    const greekFirstName = greekLower.split(" ")[0];
+    const nameNorm = removeAccents(student.name);
+    const greekNorm = removeAccents(student.greekName || student.name);
+    const greekFirstNameNorm = greekNorm.split(" ")[0];
 
-    const vocativeFull = getGreekVocative(greekLower).toLowerCase();
-    const vocativeFirstName = vocativeFull.split(" ")[0];
+    const vocativeFullNorm = removeAccents(getGreekVocative(student.greekName || student.name));
+    const vocativeFirstNameNorm = vocativeFullNorm.split(" ")[0];
 
     const isStudentMentioned =
-      text.includes(nameLower) ||
-      text.includes(greekLower) ||
-      text.includes(greekFirstName) ||
-      text.includes(vocativeFull) ||
-      text.includes(vocativeFirstName);
+      (nameNorm.length > 2 && normalizedText.includes(nameNorm)) ||
+      (greekNorm.length > 2 && normalizedText.includes(greekNorm)) ||
+      (greekFirstNameNorm.length > 2 && normalizedText.includes(greekFirstNameNorm)) ||
+      (vocativeFullNorm.length > 2 && normalizedText.includes(vocativeFullNorm)) ||
+      (vocativeFirstNameNorm.length > 2 && normalizedText.includes(vocativeFirstNameNorm));
 
     if (isStudentMentioned) {
       let foundDelta = 0;
       let foundTrigger = "";
 
       for (const p of positiveTriggers) {
-        if (text.includes(p)) {
+        if (normalizedText.includes(p)) {
           foundDelta = 1;
           foundTrigger = p;
           break;
@@ -282,7 +282,7 @@ function RuleBasedGreekParser(
 
       if (foundDelta === 0) {
         for (const n of negativeTriggers) {
-          if (text.includes(n)) {
+          if (normalizedText.includes(n)) {
             foundDelta = -1;
             foundTrigger = n;
             break;

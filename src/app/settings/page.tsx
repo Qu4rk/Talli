@@ -58,6 +58,7 @@ export default function SettingsScreen() {
     }
 
     getDevices();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Web Audio API Real-time Microphone Input Level Testing & AnalyserNode

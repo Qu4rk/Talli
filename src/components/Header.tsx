@@ -72,11 +72,18 @@ export default function Header({ showBack = false }: HeaderProps) {
       <div className="flex items-center gap-3">
         <Link href="/settings" className="flex items-center gap-3 group">
           <div className="text-right hidden sm:block">
-            <div className="text-xs font-black text-black tracking-tight">{settings.teacherName}</div>
-            <div className="text-[10px] font-bold text-purple-700">{settings.schoolName}</div>
+            <div className="text-xs font-black text-black tracking-tight">{settings.teacherName || "Teacher"}</div>
+            <div className="text-[10px] font-bold text-purple-700">{settings.schoolName || "Primary School"}</div>
           </div>
           <div className="w-10 h-10 rounded-none bg-[#facc15] border-2 border-black shadow-[2px_2px_0_0_#000] flex items-center justify-center text-sm font-black text-black group-hover:translate-x-[1px] group-hover:translate-y-[1px] transition-all">
-            JD
+            {(settings.teacherName || "Teacher")
+              .trim()
+              .split(/\s+/)
+              .map((n) => n[0])
+              .filter(Boolean)
+              .join("")
+              .toUpperCase()
+              .slice(0, 2) || "T"}
           </div>
         </Link>
       </div>

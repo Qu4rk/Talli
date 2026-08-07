@@ -15,3 +15,16 @@ export function toGreekUpper(text: string): string {
     .replace(/[\u0300-\u036f]/g, "") // Removes combining acute accent (tonos)
     .toUpperCase();
 }
+
+/**
+ * Removes Greek accents and converts text to lowercase for accent-insensitive matching.
+ * e.g. "Ελένη" -> "ελενη"
+ *      "Μπράβο" -> "μπραβο"
+ */
+export function removeAccents(text: string): string {
+  if (!text) return "";
+  return text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+}
