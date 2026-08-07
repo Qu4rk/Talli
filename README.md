@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="./public/assets/readme-hero-final.svg?v=10" width="100%" alt="Talli Ambient Classroom Intelligence Hero Banner" />
+  <img src="./public/assets/readme-hero-pure.svg?v=12" width="100%" alt="Talli Ambient Classroom Intelligence Hero Banner" />
 </p>
 
 <p align="center">
