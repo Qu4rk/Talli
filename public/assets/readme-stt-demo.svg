@@ -3,12 +3,12 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;family=Plus+Jakarta+Sans:wght@800;900&amp;display=swap');
       
-      .term-text { font-family: 'Space Mono', monospace; font-size: 12px; fill: #4ade80; }
-      .term-dim { font-family: 'Space Mono', monospace; font-size: 12px; fill: #a855f7; }
-      .term-yellow { font-family: 'Space Mono', monospace; font-size: 12px; fill: #facc15; }
-      .term-cyan { font-family: 'Space Mono', monospace; font-size: 12px; fill: #1ac2ff; }
-      .term-pink { font-family: 'Space Mono', monospace; font-size: 12px; fill: #ff66a3; }
-      .term-white { font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; fill: #ffffff; }
+      .term-text { font-family: 'Space Mono', 'SF Mono', 'Roboto Mono', 'Cascadia Code', monospace; font-size: 12px; fill: #4ade80; }
+      .term-dim { font-family: 'Space Mono', 'SF Mono', 'Roboto Mono', 'Cascadia Code', monospace; font-size: 12px; fill: #a855f7; }
+      .term-yellow { font-family: 'Space Mono', 'SF Mono', 'Roboto Mono', 'Cascadia Code', monospace; font-size: 12px; fill: #facc15; }
+      .term-cyan { font-family: 'Space Mono', 'SF Mono', 'Roboto Mono', 'Cascadia Code', monospace; font-size: 12px; fill: #1ac2ff; }
+      .term-pink { font-family: 'Space Mono', 'SF Mono', 'Roboto Mono', 'Cascadia Code', monospace; font-size: 12px; fill: #ff66a3; }
+      .term-white { font-family: 'Space Mono', 'SF Mono', 'Roboto Mono', 'Cascadia Code', monospace; font-size: 13px; font-weight: 700; fill: #ffffff; }
 
       @keyframes blink {
         0%, 100% { opacity: 1; }
@@ -38,7 +38,7 @@
   <circle cx="48" cy="24" r="6" fill="#fbbf24" />
   <circle cx="68" cy="24" r="6" fill="#22c55e" />
   
-  <text x="96" y="28" font-family="'Space Mono', monospace" font-size="12" font-weight="700" fill="#94a3b8">talli-stt-stream-console // deepgram-nova-2-el-GR --live</text>
+  <text x="96" y="28" font-family="'Space Mono', 'SF Mono', monospace" font-size="12" font-weight="700" fill="#94a3b8">talli-stt-stream-console // deepgram-nova-2-el-GR --live</text>
 
   <!-- Terminal Content Lines -->
   <g transform="translate(24, 75)">
@@ -47,27 +47,27 @@
     <text x="0" y="48" class="term-cyan">[AUDIO_VAD] 4.8s Audio Chunk Captured (PCM 16kHz, RMS Level: 74%)</text>
     
     <text x="0" y="82" class="term-yellow">▶ RAW DEEPGRAM TRANSCRIPT:</text>
-    <text x="210" y="82" class="term-white">"Μπράβο Ελένη, πολύ ωραία Γιάννη!"</text>
+    <text x="220" y="82" class="term-white">"Μπράβο Ελένη, πολύ ωραία Γιάννη!"</text>
 
     <!-- Detected Cues Frame -->
     <g transform="translate(0, 105)">
       <rect x="0" y="0" width="920" height="110" fill="#1e293b" stroke="#334155" stroke-width="2" />
       
       <text x="16" y="26" class="term-pink">✔ EVENT DETECTED [Pass 1/2]:</text>
-      <text x="220" y="26" class="term-white">Student: Eleni M. (ID #1) | Delta: +1 PTS | Trigger: "Μπράβο" | Conf: 98%</text>
+      <text x="235" y="26" class="term-white">Student: Eleni M. (ID #1) | Delta: +1 PTS | Trigger: "Μπράβο" | Conf: 98%</text>
 
       <text x="16" y="54" class="term-pink">✔ EVENT DETECTED [Pass 2/2]:</text>
-      <text x="220" y="54" class="term-white">Student: Yiannis P. (ID #2) | Delta: +1 PTS | Trigger: "Πολύ ωραία" | Conf: 96%</text>
+      <text x="235" y="54" class="term-white">Student: Yiannis P. (ID #2) | Delta: +1 PTS | Trigger: "Πολύ ωραία" | Conf: 96%</text>
 
       <text x="16" y="86" class="term-text">⚡ DISPATCH ACTION:</text>
-      <text x="170" y="86" class="term-text">Auto-Approved (97% Avg Conf &gt;= 85% Threshold) -&gt; Confetti &amp; Roster Updated</text>
+      <text x="175" y="86" class="term-text">Auto-Approved (97% Avg Conf &gt;= 85% Threshold) -&gt; Confetti &amp; Roster Updated</text>
     </g>
 
     <!-- Active Listening Prompt Line -->
     <g transform="translate(0, 240)">
       <text x="0" y="0" class="term-text">teacher@talli-classroom:~$ </text>
-      <text x="220" y="0" class="term-white">Listening for live classroom dialogue ...</text>
-      <rect x="585" y="-12" width="10" height="15" class="cursor" />
+      <text x="210" y="0" class="term-white">Listening for live classroom dialogue ...</text>
+      <rect x="575" y="-12" width="10" height="15" class="cursor" />
     </g>
   </g>
 

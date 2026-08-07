@@ -3,9 +3,9 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800;900&amp;family=Space+Mono:wght@700&amp;display=swap');
       
-      .box-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 900; fill: #000000; }
-      .box-sub { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; fill: #000000; opacity: 0.85; }
-      .arrow-text { font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; fill: #000000; }
+      .box-title { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 14px; font-weight: 900; fill: #000000; }
+      .box-sub { font-family: 'Space Mono', 'SF Mono', monospace; font-size: 11px; font-weight: 700; fill: #000000; opacity: 0.85; }
+      .arrow-text { font-family: 'Space Mono', 'SF Mono', monospace; font-size: 10px; font-weight: 700; fill: #000000; }
 
       @keyframes pulseArrow {
         0%, 100% { transform: translateX(0px); }
@@ -23,7 +23,7 @@
   
   <!-- Top Bar -->
   <rect x="4" y="4" width="968" height="42" fill="#c084fc" stroke="#000000" stroke-width="4" />
-  <text x="20" y="30" font-family="'Space Mono', monospace" font-size="13" font-weight="700" fill="#000000">ENGINE // GREEK VOCATIVE DECLENSION &amp; MULTI-STUDENT PARSER</text>
+  <text x="20" y="27" font-family="'Space Mono', 'SF Mono', monospace" font-size="13" font-weight="700" fill="#000000">ENGINE // GREEK VOCATIVE DECLENSION &amp; MULTI-STUDENT PARSER</text>
 
   <g transform="translate(30, 70)">
     

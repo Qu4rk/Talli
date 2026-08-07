@@ -3,10 +3,10 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800;900&amp;family=Space+Mono:wght@700&amp;family=Permanent+Marker&amp;display=swap');
       
-      .brand-title { font-family: 'Permanent Marker', cursive; font-size: 88px; fill: #000000; }
-      .brand-sub { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 22px; font-weight: 900; fill: #000000; letter-spacing: -0.5px; }
-      .tagline { font-family: 'Space Mono', monospace; font-size: 14px; font-weight: 700; fill: #000000; opacity: 0.85; }
-      .badge-text { font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; fill: #000000; }
+      .brand-title { font-family: 'Permanent Marker', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 80px; fill: #000000; }
+      .brand-sub { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; font-size: 20px; font-weight: 900; fill: #000000; letter-spacing: -0.5px; }
+      .tagline { font-family: 'Space Mono', 'SF Mono', monospace; font-size: 13px; font-weight: 700; fill: #000000; opacity: 0.85; }
+      .badge-text { font-family: 'Space Mono', 'SF Mono', monospace; font-size: 11px; font-weight: 700; fill: #000000; }
       
       /* Equalizer Bar Animations */
       @keyframes eq1 { 0%, 100% { height: 18px; y: 41px; } 50% { height: 50px; y: 9px; } }
@@ -29,10 +29,10 @@
       }
       .pulsing-dot { animation: pulseRing 2s infinite ease-in-out; transform-origin: center; }
       
-      /* Floating Point Cards Float Animation */
+      /* Floating Cards Animation */
       @keyframes floatUp {
         0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-8px); }
+        50% { transform: translateY(-7px); }
       }
       .floating-card-1 { animation: floatUp 3.2s ease-in-out infinite; }
       .floating-card-2 { animation: floatUp 3.8s ease-in-out infinite 0.5s; }
@@ -62,31 +62,37 @@
   <circle cx="66" cy="36" r="8" fill="#1ac2ff" stroke="#000000" stroke-width="2.5" />
   <circle cx="90" cy="36" r="8" fill="#4ade80" stroke="#000000" stroke-width="2.5" />
   
-  <text x="120" y="41" font-family="'Space Mono', monospace" font-size="14" font-weight="700" fill="#000000">TALLI // AMBIENT CLASSROOM INTELLIGENCE ENGINE (CYPRUS PRIMARY EDUCATION)</text>
+  <text x="120" y="41" font-family="'Space Mono', 'SF Mono', monospace" font-size="13" font-weight="700" fill="#000000">TALLI // AMBIENT CLASSROOM INTELLIGENCE ENGINE (CYPRUS PRIMARY EDUCATION)</text>
 
   <!-- Live Status Pill (Top Right) -->
-  <g transform="translate(930, 22)">
-    <rect x="3" y="3" width="210" height="28" fill="#000000" />
-    <rect x="0" y="0" width="210" height="28" fill="#4ade80" stroke="#000000" stroke-width="2.5" />
+  <g transform="translate(920, 22)">
+    <rect x="3" y="3" width="220" height="28" fill="#000000" />
+    <rect x="0" y="0" width="220" height="28" fill="#4ade80" stroke="#000000" stroke-width="2.5" />
     <circle cx="18" cy="14" r="6" fill="#000000" class="pulsing-dot" />
     <circle cx="18" cy="14" r="4" fill="#ffffff" />
-    <text x="34" y="19" font-family="'Space Mono', monospace" font-size="11" font-weight="700" fill="#000000">DEEPGRAM STT : LIVE</text>
+    <text x="34" y="19" font-family="'Space Mono', 'SF Mono', monospace" font-size="11" font-weight="700" fill="#000000">DEEPGRAM STT : LIVE</text>
   </g>
 
   <!-- Left Main Content Area -->
-  <g transform="translate(60, 95)">
-    <!-- Main Logo Shadow & Text -->
-    <text x="4" y="94" class="brand-title" opacity="0.15">Talli</text>
-    <text x="0" y="90" class="brand-title">Talli</text>
+  <g transform="translate(60, 85)">
+    <!-- Logo Icon & Brand Header Row -->
+    <g transform="translate(0, 0)">
+      <!-- Official Logo Image Embedding -->
+      <image href="./logo-transparent.png" x="0" y="0" width="76" height="76" />
+      
+      <!-- Brand Title Text -->
+      <text x="94" y="64" class="brand-title" opacity="0.15">Talli</text>
+      <text x="90" y="60" class="brand-title">Talli</text>
+    </g>
     
-    <rect x="0" y="115" width="620" height="42" fill="#ff66a3" stroke="#000000" stroke-width="3" />
-    <text x="16" y="142" class="brand-sub">AMBIENT GREEK CLASSROOM BEHAVIOR COPILOT</text>
+    <rect x="0" y="95" width="620" height="42" fill="#ff66a3" stroke="#000000" stroke-width="3" />
+    <text x="16" y="122" class="brand-sub">AMBIENT GREEK CLASSROOM BEHAVIOR COPILOT</text>
     
-    <text x="0" y="190" class="tagline">Passive Voice Recognition • Greek Vocative Declension Engine</text>
-    <text x="0" y="212" class="tagline">Single-Pass Multi-Student Passing • Automated Roster Analytics</text>
+    <text x="0" y="170" class="tagline">Passive Voice Recognition • Greek Vocative Declension Engine</text>
+    <text x="0" y="192" class="tagline">Single-Pass Multi-Student Passing • Automated Roster Analytics</text>
 
     <!-- Tech Stack Pill Badges -->
-    <g transform="translate(0, 240)">
+    <g transform="translate(0, 225)">
       <!-- Badge 1: Cyprus Primary System -->
       <g transform="translate(0, 0)">
         <rect x="3" y="3" width="160" height="34" fill="#000000" />
@@ -117,20 +123,20 @@
     </g>
 
     <!-- Spoken Greek Example Ribbon -->
-    <g transform="translate(0, 305)">
+    <g transform="translate(0, 290)">
       <rect x="4" y="4" width="600" height="48" fill="#000000" />
       <rect x="0" y="0" width="600" height="48" fill="#ffffff" stroke="#000000" stroke-width="3" />
       <rect x="0" y="0" width="12" height="48" fill="#ff66a3" />
-      <text x="24" y="29" font-family="'Space Mono', monospace" font-size="13" font-weight="700" fill="#000000">
+      <text x="24" y="29" font-family="'Space Mono', 'SF Mono', monospace" font-size="13" font-weight="700" fill="#000000">
         "Μπράβο Ελένη, πολύ ωραία Γιάννη!"
       </text>
       <rect x="470" y="10" width="115" height="28" fill="#4ade80" stroke="#000000" stroke-width="2" />
-      <text x="480" y="28" font-family="'Space Mono', monospace" font-size="11" font-weight="700" fill="#000000">+1 PTS EACH</text>
+      <text x="480" y="28" font-family="'Space Mono', 'SF Mono', monospace" font-size="11" font-weight="700" fill="#000000">+1 PTS EACH</text>
     </g>
   </g>
 
   <!-- Right Visual Graphics Container -->
-  <g transform="translate(730, 95)">
+  <g transform="translate(730, 85)">
     
     <!-- Audio Equalizer Monitor Window -->
     <g transform="translate(0, 0)">
@@ -139,7 +145,7 @@
       
       <!-- Equalizer Window Title -->
       <rect x="0" y="0" width="400" height="30" fill="#ffffff" stroke="#000000" stroke-width="3.5" />
-      <text x="12" y="20" font-family="'Space Mono', monospace" font-size="11" font-weight="700" fill="#000000">AUDIO SPECTRUM // 4.8s BUFFER</text>
+      <text x="12" y="20" font-family="'Space Mono', 'SF Mono', monospace" font-size="11" font-weight="700" fill="#000000">AUDIO SPECTRUM // 4.8s BUFFER</text>
       
       <!-- Animated Waveform Equalizer Bars -->
       <g transform="translate(40, 55)">
@@ -161,45 +167,45 @@
     </g>
 
     <!-- Floating Live Event Cards -->
-    <g transform="translate(0, 175)">
+    <g transform="translate(0, 170)">
       
       <!-- Event Card 1: Eleni M. Praise -->
       <g class="floating-card-1" transform="translate(0, 0)">
         <rect x="5" y="5" width="390" height="56" fill="#000000" />
         <rect x="0" y="0" width="390" height="56" fill="#4ade80" stroke="#000000" stroke-width="3" />
         <rect x="12" y="12" width="32" height="32" fill="#ffffff" stroke="#000000" stroke-width="2" />
-        <text x="22" y="33" font-family="'Space Mono', monospace" font-size="14" font-weight="700" fill="#000000">EM</text>
-        <text x="56" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="900" fill="#000000">Eleni M. (Ελένη Μ.)</text>
-        <text x="56" y="44" font-family="'Space Mono', monospace" font-size="10" font-weight="700" fill="#000000">Praise: "Μπράβο Ελένη"</text>
+        <text x="22" y="33" font-family="'Space Mono', 'SF Mono', monospace" font-size="14" font-weight="700" fill="#000000">EM</text>
+        <text x="56" y="26" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="14" font-weight="900" fill="#000000">Eleni M. (Ελένη Μ.)</text>
+        <text x="56" y="44" font-family="'Space Mono', 'SF Mono', monospace" font-size="10" font-weight="700" fill="#000000">Praise: "Μπράβο Ελένη"</text>
         
         <rect x="305" y="12" width="70" height="32" fill="#ffffff" stroke="#000000" stroke-width="2" />
-        <text x="317" y="33" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="900" fill="#000000">+1 PTS</text>
+        <text x="317" y="33" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="14" font-weight="900" fill="#000000">+1 PTS</text>
       </g>
 
       <!-- Event Card 2: Yiannis P. Praise -->
-      <g class="floating-card-2" transform="translate(10, 70)">
+      <g class="floating-card-2" transform="translate(10, 68)">
         <rect x="5" y="5" width="380" height="56" fill="#000000" />
         <rect x="0" y="0" width="380" height="56" fill="#facc15" stroke="#000000" stroke-width="3" />
         <rect x="12" y="12" width="32" height="32" fill="#ffffff" stroke="#000000" stroke-width="2" />
-        <text x="22" y="33" font-family="'Space Mono', monospace" font-size="14" font-weight="700" fill="#000000">YP</text>
-        <text x="56" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="900" fill="#000000">Yiannis P. (Γιάννης Π.)</text>
-        <text x="56" y="44" font-family="'Space Mono', monospace" font-size="10" font-weight="700" fill="#000000">Praise: "Πολύ ωραία Γιάννη"</text>
+        <text x="22" y="33" font-family="'Space Mono', 'SF Mono', monospace" font-size="14" font-weight="700" fill="#000000">YP</text>
+        <text x="56" y="26" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="14" font-weight="900" fill="#000000">Yiannis P. (Γιάννης Π.)</text>
+        <text x="56" y="44" font-family="'Space Mono', 'SF Mono', monospace" font-size="10" font-weight="700" fill="#000000">Praise: "Πολύ ωραία Γιάννη"</text>
         
         <rect x="295" y="12" width="70" height="32" fill="#ffffff" stroke="#000000" stroke-width="2" />
-        <text x="307" y="33" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="900" fill="#000000">+1 PTS</text>
+        <text x="307" y="33" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="14" font-weight="900" fill="#000000">+1 PTS</text>
       </g>
 
       <!-- Event Card 3: Nikos L. Correction -->
-      <g class="floating-card-3" transform="translate(20, 140)">
+      <g class="floating-card-3" transform="translate(20, 136)">
         <rect x="5" y="5" width="370" height="56" fill="#000000" />
         <rect x="0" y="0" width="370" height="56" fill="#ff66a3" stroke="#000000" stroke-width="3" />
         <rect x="12" y="12" width="32" height="32" fill="#ffffff" stroke="#000000" stroke-width="2" />
-        <text x="22" y="33" font-family="'Space Mono', monospace" font-size="14" font-weight="700" fill="#000000">NL</text>
-        <text x="56" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="900" fill="#000000">Nikos L. (Νίκος Λ.)</text>
-        <text x="56" y="44" font-family="'Space Mono', monospace" font-size="10" font-weight="700" fill="#000000">Correction: "Σταμάτα Νίκο"</text>
+        <text x="22" y="33" font-family="'Space Mono', 'SF Mono', monospace" font-size="14" font-weight="700" fill="#000000">NL</text>
+        <text x="56" y="26" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="14" font-weight="900" fill="#000000">Nikos L. (Νίκος Λ.)</text>
+        <text x="56" y="44" font-family="'Space Mono', 'SF Mono', monospace" font-size="10" font-weight="700" fill="#000000">Correction: "Σταμάτα Νίκο"</text>
         
         <rect x="285" y="12" width="70" height="32" fill="#ffffff" stroke="#000000" stroke-width="2" />
-        <text x="298" y="33" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="900" fill="#000000">-1 PTS</text>
+        <text x="298" y="33" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-size="14" font-weight="900" fill="#000000">-1 PTS</text>
       </g>
 
     </g>

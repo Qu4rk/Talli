@@ -1,4 +1,8 @@
 <p align="center">
+  <img src="./public/assets/logo-transparent.png" width="100" height="100" alt="Talli Logo" />
+</p>
+
+<p align="center">
   <img src="./public/assets/readme-hero.svg" width="100%" alt="Talli Ambient Classroom Intelligence Hero Banner" />
 </p>
 

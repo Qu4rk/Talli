@@ -2,8 +2,8 @@
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&amp;display=swap');
-      .color-label { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; fill: #000000; }
-      .color-hex { font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; fill: #000000; opacity: 0.7; }
+      .color-label { font-family: 'Space Mono', 'SF Mono', monospace; font-size: 11px; font-weight: 700; fill: #000000; }
+      .color-hex { font-family: 'Space Mono', 'SF Mono', monospace; font-size: 10px; font-weight: 700; fill: #000000; opacity: 0.8; }
     </style>
   </defs>
 
@@ -12,45 +12,45 @@
     <g transform="translate(0, 0)">
       <rect x="5" y="5" width="140" height="100" fill="#000000" />
       <rect x="0" y="0" width="140" height="100" fill="#ff66a3" stroke="#000000" stroke-width="3" />
-      <text x="14" y="32" class="color-label">HOT PINK</text>
-      <text x="14" y="50" class="color-hex">#FF66A3</text>
-      <text x="14" y="78" class="color-hex" font-size="9">Launchpad / Penalty</text>
+      <text x="12" y="32" class="color-label">HOT PINK</text>
+      <text x="12" y="50" class="color-hex">#FF66A3</text>
+      <text x="12" y="78" class="color-hex" font-size="9">Launchpad / Penalty</text>
     </g>
 
     <!-- Swatch 2: Blue -->
     <g transform="translate(155, 0)">
       <rect x="5" y="5" width="140" height="100" fill="#000000" />
       <rect x="0" y="0" width="140" height="100" fill="#1ac2ff" stroke="#000000" stroke-width="3" />
-      <text x="14" y="32" class="color-label">ELECTRIC BLUE</text>
-      <text x="14" y="50" class="color-hex">#1AC2FF</text>
-      <text x="14" y="78" class="color-hex" font-size="9">Class Config / Roster</text>
+      <text x="12" y="32" class="color-label">ELECTRIC BLUE</text>
+      <text x="12" y="50" class="color-hex">#1AC2FF</text>
+      <text x="12" y="78" class="color-hex" font-size="9">Class Config / Roster</text>
     </g>
 
     <!-- Swatch 3: Green -->
     <g transform="translate(310, 0)">
       <rect x="5" y="5" width="140" height="100" fill="#000000" />
       <rect x="0" y="0" width="140" height="100" fill="#4ade80" stroke="#000000" stroke-width="3" />
-      <text x="14" y="32" class="color-label">EMERALD GREEN</text>
-      <text x="14" y="50" class="color-hex">#4ADE80</text>
-      <text x="14" y="78" class="color-hex" font-size="9">Live Praise / Confetti</text>
+      <text x="12" y="32" class="color-label">EMERALD GREEN</text>
+      <text x="12" y="50" class="color-hex">#4ADE80</text>
+      <text x="12" y="78" class="color-hex" font-size="9">Live Praise / Confetti</text>
     </g>
 
     <!-- Swatch 4: Yellow -->
     <g transform="translate(465, 0)">
       <rect x="5" y="5" width="140" height="100" fill="#000000" />
       <rect x="0" y="0" width="140" height="100" fill="#facc15" stroke="#000000" stroke-width="3" />
-      <text x="14" y="32" class="color-label">SUNBURST YELLOW</text>
-      <text x="14" y="50" class="color-hex">#FACC15</text>
-      <text x="14" y="78" class="color-hex" font-size="9">Reports &amp; History</text>
+      <text x="12" y="32" class="color-label">SUNBURST YELLOW</text>
+      <text x="12" y="50" class="color-hex">#FACC15</text>
+      <text x="12" y="78" class="color-hex" font-size="9">Reports &amp; History</text>
     </g>
 
     <!-- Swatch 5: Purple -->
     <g transform="translate(620, 0)">
       <rect x="5" y="5" width="140" height="100" fill="#000000" />
       <rect x="0" y="0" width="140" height="100" fill="#c084fc" stroke="#000000" stroke-width="3" />
-      <text x="14" y="32" class="color-label">VIBRANT PURPLE</text>
-      <text x="14" y="50" class="color-hex">#C084FC</text>
-      <text x="14" y="78" class="color-hex" font-size="9">Grammar / Cheat Sheet</text>
+      <text x="12" y="32" class="color-label">VIBRANT PURPLE</text>
+      <text x="12" y="50" class="color-hex">#C084FC</text>
+      <text x="12" y="78" class="color-hex" font-size="9">Grammar / Cheat Sheet</text>
     </g>
   </g>
 </svg>
