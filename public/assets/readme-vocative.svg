@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" width="100%" height="380">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800;900&amp;family=Space+Mono:wght@700&amp;display=swap');
+      
+      .box-title { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 14px; font-weight: 900; fill: #000000; }
+      .box-sub { font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; fill: #000000; opacity: 0.85; }
+      .arrow-text { font-family: 'Space Mono', monospace; font-size: 10px; font-weight: 700; fill: #000000; }
+
+      @keyframes pulseArrow {
+        0%, 100% { transform: translateX(0px); }
+        50% { transform: translateX(6px); }
+      }
+      .moving-arrow { animation: pulseArrow 1.5s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Shadow Layer -->
+  <rect x="16" y="16" width="968" height="348" fill="#000000" />
+  
+  <!-- Outer Window Frame -->
+  <rect x="4" y="4" width="968" height="348" fill="#ffffff" stroke="#000000" stroke-width="4" />
+  
+  <!-- Top Bar -->
+  <rect x="4" y="4" width="968" height="42" fill="#c084fc" stroke="#000000" stroke-width="4" />
+  <text x="20" y="30" font-family="'Space Mono', monospace" font-size="13" font-weight="700" fill="#000000">ENGINE // GREEK VOCATIVE DECLENSION &amp; MULTI-STUDENT PARSER</text>
+
+  <g transform="translate(30, 70)">
+    
+    <!-- Row 1: Yiannis -->
+    <g transform="translate(0, 0)">
+      <!-- Nominative Box -->
+      <g transform="translate(0, 0)">
+        <rect x="4" y="4" width="220" height="70" fill="#000000" />
+        <rect x="0" y="0" width="220" height="70" fill="#1ac2ff" stroke="#000000" stroke-width="3" />
+        <text x="16" y="28" class="box-title">Γιάννης (Nominative)</text>
+        <text x="16" y="48" class="box-sub">Official Roster Name</text>
+      </g>
+
+      <!-- Transformation Connector Arrow -->
+      <g transform="translate(235, 20)" class="moving-arrow">
+        <path d="M 0 15 L 45 15 M 35 5 L 45 15 L 35 25" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <text x="-5" y="-4" class="arrow-text">getGreekVocative()</text>
+      </g>
+
+      <!-- Spoken Vocative Box -->
+      <g transform="translate(300, 0)">
+        <rect x="4" y="4" width="220" height="70" fill="#000000" />
+        <rect x="0" y="0" width="220" height="70" fill="#facc15" stroke="#000000" stroke-width="3" />
+        <text x="16" y="28" class="box-title">"Γιάννη!" (Vocative)</text>
+        <text x="16" y="48" class="box-sub">Teacher Spoken Form</text>
+      </g>
+
+      <!-- Match Target Card -->
+      <g transform="translate(540, 0)">
+        <rect x="4" y="4" width="370" height="70" fill="#000000" />
+        <rect x="0" y="0" width="370" height="70" fill="#4ade80" stroke="#000000" stroke-width="3" />
+        <text x="16" y="28" class="box-title">RESOLVED: Yiannis P. (ID #2)</text>
+        <text x="16" y="48" class="box-sub">Praise Trigger: "Πολύ ωραία" -&gt; +1 PTS</text>
+      </g>
+    </g>
+
+    <!-- Row 2: Andreas -->
+    <g transform="translate(0, 90)">
+      <g transform="translate(0, 0)">
+        <rect x="4" y="4" width="220" height="70" fill="#000000" />
+        <rect x="0" y="0" width="220" height="70" fill="#1ac2ff" stroke="#000000" stroke-width="3" />
+        <text x="16" y="28" class="box-title">Ανδρέας (Nominative)</text>
+        <text x="16" y="48" class="box-sub">Official Roster Name</text>
+      </g>
+
+      <g transform="translate(235, 20)" class="moving-arrow">
+        <path d="M 0 15 L 45 15 M 35 5 L 45 15 L 35 25" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+
+      <g transform="translate(300, 0)">
+        <rect x="4" y="4" width="220" height="70" fill="#000000" />
+        <rect x="0" y="0" width="220" height="70" fill="#facc15" stroke="#000000" stroke-width="3" />
+        <text x="16" y="28" class="box-title">"Ανδρέα!" (Vocative)</text>
+        <text x="16" y="48" class="box-sub">Teacher Spoken Form</text>
+      </g>
+
+      <g transform="translate(540, 0)">
+        <rect x="4" y="4" width="370" height="70" fill="#000000" />
+        <rect x="0" y="0" width="370" height="70" fill="#4ade80" stroke="#000000" stroke-width="3" />
+        <text x="16" y="28" class="box-title">RESOLVED: Andreas T. (ID #4)</text>
+        <text x="16" y="48" class="box-sub">Praise Trigger: "Μπράβο" -&gt; +1 PTS</text>
+      </g>
+    </g>
+
+    <!-- Row 3: Nikos -->
+    <g transform="translate(0, 180)">
+      <g transform="translate(0, 0)">
+        <rect x="4" y="4" width="220" height="70" fill="#000000" />
+        <rect x="0" y="0" width="220" height="70" fill="#1ac2ff" stroke="#000000" stroke-width="3" />
+        <text x="16" y="28" class="box-title">Νίκος (Nominative)</text>
+        <text x="16" y="48" class="box-sub">Official Roster Name</text>
+      </g>
+
+      <g transform="translate(235, 20)" class="moving-arrow">
+        <path d="M 0 15 L 45 15 M 35 5 L 45 15 L 35 25" fill="none" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+
+      <g transform="translate(300, 0)">
+        <rect x="4" y="4" width="220" height="70" fill="#000000" />
+        <rect x="0" y="0" width="220" height="70" fill="#facc15" stroke="#000000" stroke-width="3" />
+        <text x="16" y="28" class="box-title">"Νίκο!" (Vocative)</text>
+        <text x="16" y="48" class="box-sub">Teacher Spoken Form</text>
+      </g>
+
+      <g transform="translate(540, 0)">
+        <rect x="4" y="4" width="370" height="70" fill="#000000" />
+        <rect x="0" y="0" width="370" height="70" fill="#ff66a3" stroke="#000000" stroke-width="3" />
+        <text x="16" y="28" class="box-title">RESOLVED: Nikos L. (ID #6)</text>
+        <text x="16" y="48" class="box-sub">Correction Trigger: "Σταμάτα" -&gt; -1 PTS</text>
+      </g>
+    </g>
+
+  </g>
+</svg>
